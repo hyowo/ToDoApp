@@ -53,6 +53,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\tab_agenda.png" />
+	  <None Remove="Resources\Images\tab_schedule.png" />
+	  <None Remove="Resources\Images\tab_sponsors.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\AgendaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
