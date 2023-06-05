@@ -16,7 +16,7 @@
                 Title="Day 2"
                 ContentTemplate="{DataTemplate pages:SchedulePage}"
                 Route="ScheduleDay2" />
-
+            
         </Tab>
 
 

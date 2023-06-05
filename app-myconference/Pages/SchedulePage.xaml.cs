@@ -1,12 +1,36 @@
+using Microsoft.Maui.Controls;
 using app_myconference.ViewModels;
 
 namespace app_myconference.Pages;
 
+
+public partial class ScheduleDay1Page : SchedulePage
+{
+    public ScheduleDay1Page(ScheduleViewModel vm) : base()
+    {
+        vm.Day = 1;
+        Title = "Schedule - Day 1";
+        BindingContext = vm;
+    }
+}
+
+public partial class ScheduleDay2Page : SchedulePage
+{
+    public ScheduleDay2Page(ScheduleViewModel vm) : base()
+    {
+        vm.Day = 2;
+        Title = "Schedule - Day 2";
+        BindingContext = vm;
+    }
+}
 public partial class SchedulePage : ContentPage
 {
-    readonly ScheduleViewModel vm;
 
-    public SchedulePage(ScheduleViewModel vm)
+    ScheduleViewModel vm;
+    ScheduleViewModel VM => vm ??= BindingContext as ScheduleViewModel;
+
+
+    public SchedulePage()
     {
         InitializeComponent();
 
@@ -27,9 +51,5 @@ public partial class SchedulePage : ContentPage
     protected override async void OnNavigatedTo(NavigatedToEventArgs args)
     {
         base.OnNavigatedTo(args);
-        if (vm.Schedule.Count == 0)
-        {
-            await vm.LoadDataCommand.ExecuteAsync(null);
-        }
     }
 }
