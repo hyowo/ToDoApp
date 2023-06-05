@@ -60,6 +60,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Pages\AgendaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
