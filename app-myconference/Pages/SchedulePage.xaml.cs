@@ -25,7 +25,6 @@ public partial class ScheduleDay2Page : SchedulePage
 }
 public partial class SchedulePage : ContentPage
 {
-
     ScheduleViewModel vm;
     ScheduleViewModel VM => vm ??= BindingContext as ScheduleViewModel;
 
@@ -46,10 +45,19 @@ public partial class SchedulePage : ContentPage
         BindingContext = this.vm = vm;
     }
 
-
-
-    protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    protected override async void OnAppearing()
     {
-        base.OnNavigatedTo(args);
+        base.OnAppearing();
+        if (VM.Schedule.Count == 0)
+        {
+            await VM.LoadDataCommand.ExecuteAsync(null);
+        }
     }
+
+
+
+    //protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    //{
+    //    base.OnNavigatedTo(args);
+    //}
 }
