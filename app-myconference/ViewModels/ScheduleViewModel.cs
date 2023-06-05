@@ -7,12 +7,12 @@ using static Jeffsum.Goldblum;
 
 namespace app_myconference.ViewModels;
 
-public partial class AgendaViewModel : ObservableObject
+public partial class ScheduleViewModel : ObservableObject
 {
     public int Day { get; set; }
     public ObservableRangeCollection<Grouping<string, Session>> Schedule { get; } = new();
     Random random = new();
-    public AgendaViewModel()
+    public ScheduleViewModel()
     {
 
     }
